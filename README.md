@@ -5,6 +5,18 @@ UI + API test suite covering [saucedemo.com](https://www.saucedemo.com) and
 
 ## Install & Run
 
+reqres.in now requires an API key on its `/api/*` endpoints. Get a free one at
+https://reqres.in/signup, then set it as an environment variable (don't commit
+it to the repo):
+
+```bash
+# PowerShell
+$env:REQRES_API_KEY="your-key-here"
+
+# bash / zsh
+export REQRES_API_KEY="your-key-here"
+```
+
 ```bash
 npm install
 npx playwright install --with-deps chromium
@@ -78,6 +90,8 @@ refactor changes structure, not behavior.
 
 - Negative/edge-case tests: invalid credentials, checkout with missing fields.
 - A `problem_user` regression test (known UI quirks on saucedemo).
+- The bonus chained "create-then-verify" API flow (POST -> GET), noted as
+  optional in the brief and skipped here to stay within the 2-hour box.
 - API schema validation (e.g. `zod`) instead of manual `toHaveProperty` checks.
 - A CI workflow (GitHub Actions) to run the suite on push.
 
