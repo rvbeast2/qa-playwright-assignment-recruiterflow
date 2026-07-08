@@ -5,10 +5,6 @@ UI + API test suite covering [saucedemo.com](https://www.saucedemo.com) and
 
 ## Install & Run
 
-reqres.in now requires an API key on its `/api/*` endpoints. Get a free one at
-https://reqres.in/signup, then set it as an environment variable (don't commit
-it to the repo):
-
 ```bash
 # PowerShell
 $env:REQRES_API_KEY="your-key-here"
